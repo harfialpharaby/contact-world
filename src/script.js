@@ -3,7 +3,7 @@
 $(document).ready(function () {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:3000/contact',
+        url: '//https://contact-world-api.herokuapp.com/contact', //'http://localhost:3000/contact'
         dataType: 'json',
         success: function (res) {
             const contacts = res.Data;
@@ -49,7 +49,7 @@ $(document).ready(function () {
 function addContact() {
     const form = $('#formAdd').serialize();
     $.ajax({
-        url: 'http://localhost:3000/contact/add',
+        url: '//https://contact-world-api.herokuapp.com/contact/add', //'http://localhost:3000/contact/add'
         type: 'POST',
         data: form
     })
@@ -64,7 +64,7 @@ function addContact() {
 function editContact(id) {
     const form = $('#formEditDelete').serialize();
     $.ajax({
-        url: 'http://localhost:3000/contact/edit/' + id,
+        url: '//https://contact-world-api.herokuapp.com/\contact/edit/' + id, //'http://localhost:3000/contact/edit/' + id
         type: 'POST',
         data: form
     })
@@ -79,7 +79,7 @@ function editContact(id) {
 function deleteContact(id) {
     const form = $('#formEditDelete').serialize();
     $.ajax({
-        url: 'http://localhost:3000/contact/delete/' + id,
+        url: '//https://contact-world-api.herokuapp.com/contact/delete/' + id, //'http://localhost:3000/contact/delete/' + id
         type: 'GET'
     })
         .done(success => {
@@ -92,7 +92,7 @@ function deleteContact(id) {
 
 function getContact(id, isEdit) {
     $.ajax({
-        url: 'http://localhost:3000/contact/' + id,
+        url: '//https://contact-world-api.herokuapp.com/contact/' + id, //'http://localhost:3000/contact/' + id
         type: 'GET',
         dataType: 'json',
         success: result => {
